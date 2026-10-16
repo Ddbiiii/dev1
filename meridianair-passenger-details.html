@@ -1,0 +1,222 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Passenger Details Demo — MERIDIAN AIR</title><meta name="description" content="The passenger stage is an information guide. It collects no identity documents and does not create a passenger record."><meta property="og:title" content="Passenger Details Demo — MERIDIAN AIR"><style>*{box-sizing:border-box}html{background:#f7f4ef;color:#282129;font-family:Arial,sans-serif}body{margin:0;background:#f7f4ef;line-height:1.5}a{color:inherit;text-decoration:none}.site-header{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;padding:16px 4vw;border-bottom:1px solid #d8cfd0;position:sticky;top:0;background:#f7f4eff5;z-index:3}.brand{font-weight:800;letter-spacing:.08em;color:#332333}.brand small{display:block;font:10px monospace;color:#4d3048;letter-spacing:.1em;margin-top:3px}nav{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}nav a{font:11px monospace;text-transform:uppercase;color:#756d76}nav a:hover{color:#332333}.utility{font:11px monospace;border:1px solid #d8cfd0;padding:7px 10px;color:#4d3048}main{max-width:1240px;margin:auto;padding:0 24px 70px}.hero,.head{padding:68px 0 52px;border-bottom:1px solid #d8cfd0;background:radial-gradient(circle at 90% 0,#b9d5dc77,transparent 36%)}.eyebrow,.tag,.route{font:11px monospace;letter-spacing:.14em;color:#4d3048;text-transform:uppercase}h1{font-size:clamp(2.7rem,7vw,6.5rem);line-height:.94;letter-spacing:-.07em;margin:18px 0;color:#332333}.lede{font-size:1.2rem;color:#756d76;max-width:620px}.search-card{margin-top:36px;background:#fff;padding:18px;border:1px solid #d8cfd0;box-shadow:10px 10px #b9d5dc}.tabs{display:flex;gap:6px;border-bottom:1px solid #d8cfd0;padding-bottom:12px;margin-bottom:18px}.tabs button{border:0;background:none;padding:7px 12px;font:12px monospace;color:#756d76}.tabs .active{background:#332333;color:#fff}.fields{display:grid;grid-template-columns:1.1fr 1.1fr 1fr .8fr auto;gap:9px;align-items:end}label{font:11px monospace;color:#756d76;display:grid;gap:6px}input,select{font:15px Arial;padding:12px;border:1px solid #d8cfd0;background:#f7f4ef;color:#282129}.search-btn{padding:13px 16px;border:0;background:#f3a64a;color:#332333;font:12px monospace;min-height:46px}.note{font-size:11px;color:#756d76}.journey{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid #d8cfd0}.journey div{padding:24px;border-right:1px solid #d8cfd0}.journey div:last-child{border:0}.journey span{font:11px monospace;color:#4d3048}.journey b{display:block;font-size:1.4rem;color:#332333;margin-top:12px}.journey p{margin:3px 0;color:#756d76}.board{padding:44px 0}.fare{display:grid;grid-template-columns:.5fr 1.5fr .5fr 1fr;gap:18px;align-items:center;padding:20px 0;border-bottom:1px solid #d8cfd0}.fare b{display:block;font-size:1.8rem;color:#332333}.fare small{color:#756d76}.line{display:flex;gap:8px;align-items:center;font:11px monospace;color:#756d76}.line i{height:1px;background:#4d3048;flex:1}.fare strong{text-align:right;color:#4d3048}footer{border-top:1px solid #d8cfd0;padding:22px 4vw;display:flex;justify-content:space-between;color:#756d76;font:11px monospace}@media(max-width:900px){.site-header{grid-template-columns:1fr auto}.site-header nav{grid-column:1/-1;justify-content:flex-start;overflow:auto;flex-wrap:nowrap}.fields{grid-template-columns:1fr 1fr}.search-btn{grid-column:1/-1}.fare{grid-template-columns:.5fr 1.4fr .5fr}.fare strong{grid-column:1/-1;text-align:left}}@media(max-width:560px){main{padding:0 18px 50px}.fields{grid-template-columns:1fr}.journey{grid-template-columns:1fr}.journey div{border-right:0;border-bottom:1px solid #d8cfd0}.fare{grid-template-columns:.5fr 1fr .5fr}h1{font-size:clamp(2.8rem,15vw,5rem)}footer{flex-direction:column;gap:8px}}:focus-visible{outline:3px solid #f3a64a;outline-offset:3px}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}</style><style data-inlined-from="demo-polish.css">
+/* DIRAC FAMILY POLISH — embedded by design; no shared runtime dependency. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body[data-dirac-family]{font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+body[data-dirac-family] :where(a,button,input,select,textarea){-webkit-tap-highlight-color:transparent}
+body[data-dirac-family] :where(button,a,[role="button"]){touch-action:manipulation}
+body[data-dirac-family] :where(h1,h2){text-wrap:balance}
+body[data-dirac-family] :where(p,li){text-wrap:pretty}
+body[data-dirac-family] :where(img,svg){shape-rendering:geometricPrecision}
+body[data-dirac-family] ::selection{background:rgba(128,128,128,.22)}
+@media(max-width:640px){body[data-dirac-family] :where(input,select,textarea){font-size:16px!important}}
+@media(prefers-reduced-motion:reduce){body[data-dirac-family] *,body[data-dirac-family] *::before,body[data-dirac-family] *::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+/* 21 — airline: calm booking surface and route-table clarity. */
+body[data-dirac-family="meridianair"] :where(.fare,.route,.journey,.time){font-variant-numeric:tabular-nums}
+body[data-dirac-family="meridianair"] .search-card{box-shadow:8px 8px 0 #b9d5dc}
+@media(hover:hover){body[data-dirac-family="meridianair"] .fare:hover{background:rgba(185,213,220,.14)}body[data-dirac-family="meridianair"] .nav a:hover{text-decoration:underline;text-underline-offset:.22em}}
+
+</style><style data-inlined-from="demo-chrome.css">
+#dirac-demo-safe-space{display:block;box-sizing:border-box;height:110px;min-height:110px;width:100%;flex:none;pointer-events:none}
+/* Demo navigation is isolated from each site's visual identity. */
+#dirac-demo-tools,#dirac-demo-tools *{box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;letter-spacing:normal;text-transform:none;text-shadow:none}
+#dirac-demo-tools{all:initial;display:block;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;position:fixed;z-index:2147483590;left:max(12px,env(safe-area-inset-left));bottom:max(12px,env(safe-area-inset-bottom));width:min(350px,calc(100vw - 24px));color:#20262d;text-align:left;font-size:14px;line-height:1.5}
+#dirac-demo-tools details{display:block;margin:0;border:1px solid #cad0d6;border-radius:8px;background:#fff;box-shadow:0 4px 22px #0002;max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px);overflow:auto}
+#dirac-demo-tools summary{display:list-item;cursor:pointer;padding:10px 14px;min-height:44px;font-size:12px;font-weight:700;background:#20262d;color:#fff;list-style-position:inside}
+#dirac-demo-tools summary::marker{color:#b8c1cb}
+#dirac-demo-tools summary span{font-size:10px;font-weight:400;display:block;padding-left:15px;color:#eef1f4;line-height:1.45}
+#dirac-demo-tools .dirac-demo-destinations{padding:12px;display:grid;gap:8px}
+#dirac-demo-tools a{display:block;padding:10px 12px;min-height:44px;border:1px solid #cbd1d8;border-radius:4px;color:#14263b;background:#fff;text-decoration:none;line-height:1.45;font-weight:700;font-size:14px;overflow-wrap:anywhere;transition:background-color .16s ease}
+#dirac-demo-tools a:hover{background:#edf2f6;text-decoration:underline;text-underline-offset:3px}
+#dirac-demo-tools a small{display:block;font-size:12px;font-weight:400;color:#505c69}
+#dirac-demo-tools p{margin:0;padding:0 14px 12px;font-size:12px;color:#505c69;line-height:1.5}
+#dirac-demo-tools :is(a,summary):focus-visible{outline:3px solid #2780c3;outline-offset:-3px}
+@media(prefers-reduced-motion:reduce){#dirac-demo-tools a{transition:none}}
+@media print{#dirac-demo-tools,#dirac-demo-safe-space{display:none}}
+</style><meta name="robots" content="index,follow"><link rel="canonical" href="meridianair-passenger-details.html"><meta property="og:description" content="The passenger stage is an information guide. It collects no identity documents and does not create a passenger record."><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Passenger Details Demo — MERIDIAN AIR"><meta name="twitter:description" content="Review traveler information for a demo booking."><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%228%22%20fill%3D%22%23315568%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2239%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2222%22%20font-weight%3D%22700%22%20fill%3D%22white%22%3EMA%3C%2Ftext%3E%3C%2Fsvg%3E" type="image/svg+xml"><style data-dirac-responsive-fix="meridianair">@media(max-width:1100px){.fields{grid-template-columns:1fr 1fr}.search-btn{grid-column:1/-1}}@media(max-width:560px){.fields{grid-template-columns:1fr}}</style><style data-discovery-refinement="meridianair">
+.discovery-brief{margin:3rem 0 1rem;scroll-margin-top:7rem}.discovery-label{font:700 .7rem/1.5 ui-monospace,monospace;letter-spacing:.15em;text-transform:uppercase;margin:0 0 1rem}.discovery-intro{font-size:1.08rem;max-width:66ch;line-height:1.65}.discovery-brief h2{font-size:clamp(1.7rem,3.2vw,3rem);line-height:1.08;letter-spacing:-.035em;margin:.25rem 0 1rem}.discovery-brief h3{font-size:1.12rem;line-height:1.3;letter-spacing:0;margin:0 0 .5rem}.discovery-brief p{line-height:1.65}.discovery-next{display:inline-block;margin-top:1.5rem;text-decoration:underline;text-underline-offset:.3em;font-weight:700}.discovery-related{font-size:.92rem;max-width:65ch;opacity:.85}.discovery-note{margin:2rem 0;padding:1.4rem 1.6rem;border-left:3px solid currentColor}.discovery-note h2{font-size:1.45rem;margin:0 0 .7rem}.discovery-note p{max-width:75ch;line-height:1.7}.discovery-directory{flex-basis:100%;grid-column:1/-1;width:100%;border-top:1px solid currentColor;margin-top:1.2rem;padding-top:1rem;letter-spacing:0}.discovery-directory summary{cursor:pointer;font:700 .85rem/1.5 Arial,sans-serif;min-height:44px;padding:10px 0}.discovery-directory nav{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:.3rem 1.2rem!important;justify-content:start!important;padding:1rem 0}.discovery-directory a{font:400 .82rem/1.5 Arial,sans-serif!important;text-transform:none!important;letter-spacing:0!important;display:block!important;padding:8px 0;margin:0!important;text-decoration:underline!important;text-underline-offset:3px;overflow-wrap:anywhere}.discovery-breadcrumb{font:.75rem/1.5 ui-monospace,monospace;margin-bottom:1.5rem}.discovery-breadcrumb a{text-decoration:underline;text-underline-offset:3px}body[data-dirac-family] :where(a,button,input,select,textarea,summary):focus-visible{outline:3px solid #a54b24;outline-offset:4px}body[data-dirac-family] :where(main,.page,.shell,section,article,nav){min-width:0}body[data-dirac-family] :where(h1,h2,h3,p,a){overflow-wrap:break-word}body[data-dirac-family] footer{flex-wrap:wrap}body[data-dirac-family] footer>nav[aria-label]{align-content:start}body[data-dirac-family] .pin,body[data-dirac-family] .node,body[data-dirac-family] .pulse{animation-iteration-count:1}
+@media(max-width:700px){.discovery-directory nav{grid-template-columns:repeat(2,minmax(0,1fr))}.discovery-brief{margin-top:2rem}.discovery-note{padding:1rem}.discovery-brief h2{font-size:1.75rem}}
+body[data-dirac-family="meridianair"] .site-header nav{gap:12px}body[data-dirac-family="meridianair"] .site-header nav a{color:#57434f}.air-desk{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:3rem;border-top:3px solid #4d3048;padding-top:2rem}.air-steps{list-style:none;counter-reset:flight;padding:0;margin:0}.air-steps li{counter-increment:flight;display:grid;grid-template-columns:40px 1fr;gap:12px;padding:1.2rem 0;border-bottom:1px solid #d8cfd0}.air-steps li:before{content:counter(flight,decimal-leading-zero);font:12px monospace;color:#7c5169;padding-top:4px}.air-steps p{margin:0;color:#594b55}.air-desk .discovery-label{color:#7c5169}.air-desk .discovery-next{background:#f3e7d6;padding:12px 16px}.air-desk h2{font-family:Georgia,serif;font-weight:400}.air-desk .discovery-intro{color:#6a5c65}body[data-dirac-family="meridianair"] .head{padding:56px 0 40px}body[data-dirac-family="meridianair"] footer{font-size:12px}@media(max-width:760px){.air-desk{grid-template-columns:1fr;gap:1rem}body[data-dirac-family="meridianair"] .site-header{position:relative}body[data-dirac-family="meridianair"] .site-header nav{flex-wrap:wrap;overflow:visible}body[data-dirac-family="meridianair"] .site-header nav a{padding:8px 0}}</style><style data-inline-source="festival-refinement.css">/* Scoped refinement of original seven demo families; no global theme rewrite. */
+[data-tm-family] .tm-directory{display:block!important;width:100%;flex:1 0 100%;max-width:1240px;margin:42px auto 12px;padding:36px 24px 20px;border-top:1px solid currentColor;font-family:Arial,sans-serif;text-align:left;letter-spacing:normal}
+[data-tm-family] footer{flex-wrap:wrap}
+[data-tm-family] .tm-directory h2{font-family:inherit;font-size:27px;line-height:1.25;letter-spacing:-.025em;font-weight:600;margin:0 0 12px;color:inherit}
+[data-tm-family] .tm-directory p{font-size:13px;line-height:1.7;max-width:none;margin:0 0 15px;color:inherit}
+[data-tm-family] .tm-directory-head{display:flex;justify-content:space-between;gap:24px;align-items:baseline;margin-bottom:24px}
+[data-tm-family] .tm-directory-search{display:block;font:12px/1.5 Arial,sans-serif;letter-spacing:normal;color:inherit;max-width:530px;margin:0 0 8px}
+[data-tm-family] .tm-directory-search input{display:block;width:100%;padding:12px 14px;margin-top:8px;border:1px solid currentColor;border-radius:0;background:transparent;color:inherit;font:16px Arial,sans-serif;min-height:48px}
+[data-tm-family] .tm-directory-groups{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px;margin-top:26px}
+[data-tm-family] .tm-directory-group h3{font:bold 11px/1.6 Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase;max-width:none;margin:0 0 17px;color:inherit}
+[data-tm-family] .tm-directory-group nav{position:static!important;display:flex!important;flex-direction:column!important;gap:0!important;margin:0!important;padding:0!important;background:none!important;border:0!important;box-shadow:none!important;text-align:left!important;align-items:stretch!important}
+[data-tm-family] .tm-directory-group a{display:block!important;font:13px/1.5 Arial,sans-serif!important;letter-spacing:normal!important;text-transform:none!important;min-height:40px;padding:8px 0!important;color:inherit!important;opacity:1!important;border:0!important;text-decoration:none;overflow-wrap:anywhere}
+[data-tm-family] .tm-directory-group a:hover{text-decoration:underline;text-underline-offset:4px}
+[data-tm-family] #tm-directory-status{font:12px/1.5 Arial,sans-serif;min-height:20px;margin:10px 0;color:inherit}
+[data-tm-family] [hidden]{display:none!important}
+[data-tm-family] :where(a,button,input,select,textarea,summary):focus-visible{outline:3px solid currentColor;outline-offset:4px}
+[data-tm-family] .tm-skip{position:fixed;top:-100px;left:12px;z-index:99999;background:#fff;color:#162923;padding:13px 20px;font:14px Arial,sans-serif}
+[data-tm-family] .tm-skip:focus{top:12px}
+[data-tm-family] .tm-watchlist,[data-tm-family] .tm-storage-note,[data-tm-family] .tm-flight-summary{padding:35px 0;margin:35px 0;border-top:1px solid currentColor;border-bottom:1px solid currentColor}
+[data-tm-family] .tm-watchlist h2,[data-tm-family] .tm-storage-note h2,[data-tm-family] .tm-flight-summary h2{font-size:30px;line-height:1.2;margin:0 0 18px}
+[data-tm-family] .tm-watchlist ul{list-style:none;padding:0;margin:22px 0}
+[data-tm-family] .tm-watchlist li{padding:13px 0;border-top:1px solid var(--line,#b7c4bc);display:flex;gap:20px;align-items:center;justify-content:space-between}
+[data-tm-family] .tm-watchlist button,[data-tm-family] .tm-flight-summary a{border:1px solid currentColor;color:inherit;background:transparent;font:12px Arial,sans-serif;padding:12px 16px;min-height:44px;cursor:pointer;border-radius:0;text-decoration:none}
+[data-tm-family] .tm-live-note{font:12px/1.5 Arial,sans-serif;margin:10px 0;max-width:60ch}
+[data-tm-family="auralis"]{background:#15191b}
+[data-tm-family="meridianair"] .hero,[data-tm-family="meridianair"] .head{background:none}
+[data-tm-family="meridianair"] .search-card{box-shadow:none;border-top:3px solid #4d3048}
+[data-tm-family="morrowglass"] .hero{background:#eee2cb}
+[data-tm-family="morrowglass"] .hero:after{display:none}
+[data-tm-family="lumenreel"] .frame .orb{border-radius:0;box-shadow:none;transform:none;background:#a44b39;border:1px solid #edd7be;display:grid;place-items:center}
+[data-tm-family="lumenreel"] .frame .orb:after{content:'LUMEN / FRAME STUDY';font:11px/1.6 Arial,sans-serif;letter-spacing:.12em;color:#fff0db;max-width:100px;text-align:center}
+[data-tm-family="afterframe"] .tm-directory{max-width:none;padding-inline:0}
+[data-tm-family="afterframe"] .tm-directory h2{font-size:30px!important;line-height:1.25!important;font-family:Arial,sans-serif!important}
+@media(max-width:760px){[data-tm-family] .tm-directory{padding:28px 16px 12px;margin-top:30px}[data-tm-family] .tm-directory-head{display:block;margin-bottom:20px}[data-tm-family] .tm-directory-groups{grid-template-columns:1fr 1fr;gap:24px}[data-tm-family] .tm-directory-group a{font-size:12px!important;min-height:44px}[data-tm-family] .tm-watchlist li{align-items:flex-start}[data-tm-family="afterframe"] .tm-directory{padding-inline:0}}
+@media(max-width:390px){[data-tm-family] .tm-directory-groups{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){[data-tm-family]{scroll-behavior:auto}[data-tm-family] *,[data-tm-family] *:before,[data-tm-family] *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media print{[data-tm-family] .tm-directory-search,[data-tm-family] .tm-watchlist button{display:none}[data-tm-family] .tm-directory-groups{grid-template-columns:1fr 1fr}}
+</style><!-- festival-refinement.js inlined at document tail to preserve deferred order. --><style id="dirac-premium-layout">
+/* DIRAC 2026: targeted layout refinements; existing family art direction retained. */
+html{scroll-padding-top:100px;text-size-adjust:100%;-webkit-text-size-adjust:100%}
+main,article,section,figure,fieldset{min-width:0}img,svg,video{max-width:100%}figure{max-width:100%}
+:where(h1,h2,h3){text-wrap:balance}:where(p,li){text-wrap:pretty}
+:where(button,input,select,textarea){max-width:100%}:where(input,select,textarea){min-width:0}
+:where(a,button,summary,input,select,textarea):focus-visible{outline:3px solid currentColor;outline-offset:4px}
+nav a[aria-current="page"]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+:where(.table-wrap,.table-scroll){max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:thin}
+:where(.table-wrap,.table-scroll):focus-visible{outline:3px solid currentColor;outline-offset:3px}
+dialog{max-height:calc(100dvh - 32px);overflow:auto;overscroll-behavior:contain}
+:where(.discovery-breadcrumb,.document-breadcrumb,.folio-breadcrumb,.folio-route){overflow-wrap:anywhere}
+:where(.tm-directory-search,.studio-search-form) input{font-size:16px}
+@media(max-width:600px){html{scroll-padding-top:120px}:where(button,summary){min-height:44px}:where(input,select,textarea){font-size:16px}:where(.tm-directory-group a,.studio-index-group a){min-height:44px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}:where(*,*::before,*::after){animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+h1{letter-spacing:-.045em;line-height:1.02;max-width:15ch}.lede{line-height:1.7}.site-header{background:#f7f4ef}.search-card{padding:24px;border-top:3px solid #4d3048;box-shadow:none}.fields>*{min-width:0}.fields label{font-size:12px;line-height:1.5}.fields input,.fields select{width:100%;min-height:48px}.tabs{flex-wrap:wrap;gap:8px}.tabs button{cursor:pointer;min-height:44px}.tabs button[aria-pressed=true]{background:#332333;color:#fff}.journey div{padding:28px 22px}.journey p{line-height:1.7}.fare{grid-template-columns:minmax(75px,.5fr) minmax(0,1.5fr) minmax(75px,.5fr) minmax(100px,1fr);font-variant-numeric:tabular-nums}.fare .line{min-width:0}.note{font-size:13px;line-height:1.7}.discovery-brief{scroll-margin-top:100px}.air-steps li{padding-block:23px}@media(max-width:900px){.site-header{gap:16px}.fields{grid-template-columns:1fr 1fr}.fare{grid-template-columns:75px minmax(0,1fr) 75px}.fare strong{grid-column:1/-1;text-align:left}}@media(max-width:560px){.search-card{padding:18px}.fields{grid-template-columns:1fr}.tabs{gap:4px}.tabs button{padding-inline:10px;font-size:11px}.hero,.head{padding-block:42px}.fare{gap:10px;grid-template-columns:65px minmax(0,1fr) 65px}.fare b{font-size:25px}.journey div{padding-inline:0}.utility{display:none}}
+.premium-menu-button{display:none;border:1px solid currentColor;background:transparent;color:inherit;min-height:44px;min-width:68px;padding:10px 14px;font:12px/1.4 Arial,sans-serif;cursor:pointer;letter-spacing:.04em;align-items:center;justify-content:center;gap:14px}
+.premium-menu-button[aria-expanded=true]{text-decoration:underline;text-underline-offset:5px}
+nav.premium-primary-nav[hidden],.premium-menu-button[hidden]{display:none!important}
+@media(max-width:900px){.premium-menu-button{display:inline-flex;margin-left:auto}.premium-nav-header{display:flex;align-items:center;flex-wrap:wrap}.premium-nav-header nav.premium-primary-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;order:10;flex-basis:100%;grid-column:1/-1;gap:0 22px;padding:12px 0 4px;overflow:visible;white-space:normal;margin:0}.premium-nav-header nav.premium-primary-nav a{white-space:normal;min-width:0;min-height:48px;padding:12px 0;display:flex;align-items:center;border-top:1px solid currentColor;font-size:12px;line-height:1.5;overflow-wrap:anywhere}.premium-nav-header .head-inner{display:flex;flex-wrap:wrap;width:100%}.premium-nav-header .head-actions{margin-left:auto}.premium-nav-header .status{order:3;font-size:10px;flex-basis:100%}}
+@media(max-width:360px){.premium-nav-header nav.premium-primary-nav{grid-template-columns:1fr;max-height:calc(100dvh - 130px);overflow:auto}.premium-nav-header .brand{font-size:12px;white-space:normal}.premium-nav-header .brand small{font-size:9px}}
+</style></head><body data-tm-family="meridianair" data-dirac-family="meridianair"><a class="tm-skip" href="#tm-main">Skip to content</a><header class="site-header premium-nav-header"><a class="brand" href="meridianair-index.html">MERIDIAN AIR<small>CONCEPT WEBSITE · DEMO 21</small></a><button type="button" id="premium-menu-toggle" class="premium-menu-button" aria-expanded="false" aria-controls="premium-primary-nav" hidden>EXPLORE</button><nav id="premium-primary-nav" aria-label="Primary navigation" class="premium-primary-nav"><a href="meridianair-book-flight.html">Plan a flight</a><a href="meridianair-manage-booking.html">Manage</a><a href="meridianair-check-in.html">Check in</a><a href="meridianair-route-network.html">Destinations</a><a href="meridianair-travel-checklist.html">Travel guide</a><a href="meridianair-help.html">Help</a></nav><span class="utility">DEMO / EN</span></header><main id="tm-main"><section class="head"><div class="eyebrow">MERIDIAN AIR / PASSENGER DESK</div><h1>Passenger Details Demo</h1><p class="lede">Review traveler information for a demo booking.</p><div class="route">MDA · PASSENGER-FIRST OPERATIONS</div></section><section class="discovery-brief air-desk"><div><p class="discovery-label">Passenger desk</p><h2>Names deserve a second look</h2><p class="discovery-intro">The passenger stage is an information guide. It collects no identity documents and does not create a passenger record.</p></div><div><ol class="air-steps"><li><div><h3>Traveller identity</h3><p>For a real itinerary, names must be entered according to the carrier&#x27;s instructions and the document used for travel.</p></div></li><li><div><h3>Contact route</h3><p>Use a reachable contact for schedule updates in a real booking. Do not enter someone else&#x27;s details without their agreement.</p></div></li><li><div><h3>Additional needs</h3><p>Record assistance and meal requests separately from identity fields so neither is lost in a long form.</p></div></li></ol><a class="discovery-next" href="meridianair-special-assistance.html">Describe the journey, not just the seat <span aria-hidden="true">↗</span></a><p class="discovery-related">Assistance planning works best when airport movement, transfers and the cabin are discussed together. This concept cannot arrange a service.</p></div></section></main><footer>MERIDIAN AIR / PASSENGER JOURNEY EXPERIENCE · Demo only · no real booking<section class="tm-directory" id="tm-directory" aria-label="Complete page directory"><div class="tm-directory-head"><h2>Explore the full site</h2><p>32 pages, organised around your next step.</p></div><label class="tm-directory-search" for="tm-directory-query">Find a page in this directory<input id="tm-directory-query" type="search" maxlength="100" autocomplete="off"></label><p id="tm-directory-status" role="status" aria-live="polite"></p><div class="tm-directory-groups"><div class="tm-directory-group"><h3>Plan &amp; compare</h3><nav aria-label="Plan &amp; compare"><a href="meridianair-index.html">Home</a><a href="meridianair-book-flight.html">Book Flight</a><a href="meridianair-flight-results.html">Flight Results</a><a href="meridianair-fare-selection.html">Fare Selection</a><a href="meridianair-route-network.html">Route Network</a><a href="meridianair-destination.html">Destination</a><a href="meridianair-offers.html">Offers</a><a href="meridianair-cabin-classes.html">Cabin Classes</a></nav></div><div class="tm-directory-group"><h3>Your journey</h3><nav aria-label="Your journey"><a href="meridianair-passenger-details.html" aria-current="page">Passenger Details</a><a href="meridianair-seat-selection.html">Seat Selection</a><a href="meridianair-booking-review.html">Booking Review</a><a href="meridianair-baggage.html">Baggage</a><a href="meridianair-connections.html">Connections</a><a href="meridianair-travel-requirements.html">Travel Requirements</a><a href="meridianair-travel-checklist.html">Travel Checklist</a><a href="meridianair-airport-information.html">Airport Information</a></nav></div><div class="tm-directory-group"><h3>On board &amp; access</h3><nav aria-label="On board &amp; access"><a href="meridianair-onboard-experience.html">Onboard Experience</a><a href="meridianair-lounges.html">Lounges</a><a href="meridianair-meal-preferences.html">Meal Preferences</a><a href="meridianair-family-travel.html">Family Travel</a><a href="meridianair-special-assistance.html">Special Assistance</a><a href="meridianair-loyalty-program.html">Loyalty Program</a></nav></div><div class="tm-directory-group"><h3>Passenger support</h3><nav aria-label="Passenger support"><a href="meridianair-manage-booking.html">Manage Booking</a><a href="meridianair-check-in.html">Check In</a><a href="meridianair-flight-status.html">Flight Status</a><a href="meridianair-disruption-guide.html">Disruption Guide</a><a href="meridianair-help.html">Help</a><a href="meridianair-contact.html">Contact</a><a href="meridianair-about.html">About</a><a href="meridianair-privacy.html">Privacy</a><a href="meridianair-terms.html">Terms</a><a href="meridianair-404.html">Page recovery</a></nav></div></div><noscript><p>All links remain available without JavaScript.</p></noscript></section></footer><script>(()=>{const f=document.getElementById('flight-search');/* Search form enhanced locally by the scoped refinement script. */try{localStorage.setItem('air21_last','meridianair-passenger-details.html')}catch(e){}})();</script><!-- DIRAC-DEMO-UI:START --><div id="dirac-demo-safe-space" aria-hidden="true"></div><aside lang="id" id="dirac-demo-tools" aria-label="Navigasi dan kredit desain demo"><details><summary>DEMO · Kembali ke katalog<span>CV Multi Usaha Mandiri &amp; PT Dirac Inovasi Nusantara</span></summary><nav class="dirac-demo-destinations" aria-label="Pilih katalog tujuan"><a id="dirac-return-main" href="website.html">Katalog domain utama<small id="dirac-main-host">Website utama</small></a><a id="dirac-return-dev" href="index.html">Katalog subdomain dev<small id="dirac-dev-host">Semua situs demo</small></a></nav><p>Desain oleh CV Multi Usaha Mandiri &amp; PT Dirac Inovasi Nusantara. Data dan transaksi pada situs demo merupakan simulasi.</p></details></aside><!-- DIRAC-DEMO-UI:END --><script id="dirac-demo-return-links">
+/* Explicit return links. No requests, redirects, timers or observers. */
+(function () {
+  'use strict';
+  var main = document.getElementById('dirac-return-main');
+  var dev = document.getElementById('dirac-return-dev');
+  if (!main || !dev) return;
+  var host = location.hostname.toLowerCase();
+  var local = !host || host === 'localhost' || host.endsWith('.localhost') || /^(?:\d{1,3}\.){3}\d{1,3}$/.test(host) || host.indexOf(':') !== -1;
+  // dirac-preview-return-v2: keep static previews within this package.
+  var preview = /(?:^|\.)(?:pages\.dev|workers\.dev|github\.io|githubpreview\.dev|netlify\.app|vercel\.app|web\.app|firebaseapp\.com|surge\.sh|replit\.dev|replit\.app|glitch\.me|webflow\.io|azurestaticapps\.net|onrender\.com)$/.test(host);
+  if (location.protocol === 'file:' || local || preview) {
+    dev.href = './index.html';
+    var label = document.getElementById('dirac-dev-host');
+    if (label) label.textContent = 'Koleksi dalam paket ini';
+    return;
+  }
+  if (location.protocol !== 'https:' && location.protocol !== 'http:') return;
+  var base = host.replace(/^(?:(?:auth|panel|order|shop|security|project|api|www|cs|dev|dev1|pt|cv|domain|topup)\.)+(?=[^.]+\.[^.]+)/i, '');
+  var port = location.port ? ':' + location.port : '';
+  var origin = location.protocol + '//' + base + port;
+  var demoOrigin = location.protocol + '//dev.' + base + port;
+  main.href = origin + '/website.html';
+  dev.href = demoOrigin + '/index.html';
+  var catalogMain = document.getElementById('dirac-catalog-main');
+  if (catalogMain) catalogMain.href = origin + '/website.html';
+  document.getElementById('dirac-main-host').textContent = base;
+  document.getElementById('dirac-dev-host').textContent = 'dev.' + base;
+}());
+</script><script id="dirac-premium-navigation">
+/* Responsive primary navigation, local DOM only. */
+(function(){'use strict';var button=document.getElementById('premium-menu-toggle'),nav=document.getElementById('premium-primary-nav');if(!button||!nav)return;var media=window.matchMedia('(max-width:900px)');function sync(){var mobile=media.matches;button.hidden=!mobile;nav.hidden=mobile&&button.getAttribute('aria-expanded')!=='true';}function close(returnFocus){button.setAttribute('aria-expanded','false');sync();if(returnFocus&&media.matches)button.focus();}button.addEventListener('click',function(){button.setAttribute('aria-expanded',button.getAttribute('aria-expanded')==='true'?'false':'true');sync();});nav.addEventListener('click',function(event){if(event.target.closest('a'))close(false);});document.addEventListener('keydown',function(event){if(event.key==='Escape'&&media.matches&&button.getAttribute('aria-expanded')==='true'){event.preventDefault();close(true);}});document.addEventListener('click',function(event){if(media.matches&&!button.contains(event.target)&&!nav.contains(event.target))close(false);});if(media.addEventListener)media.addEventListener('change',function(){close(false);});else media.addListener(function(){close(false);});sync();}());
+</script><script data-inline-source="festival-refinement.js">/* Progressive enhancements scoped to original travel/media pages. No network calls. */
+(() => {
+  'use strict';
+  const family=document.body.dataset.tmFamily;
+  if(!family)return;
+  const $=selector=>document.querySelector(selector);
+  const $$=selector=>Array.from(document.querySelectorAll(selector));
+  const english=['auralis','meridianair','morrowglass','lumenreel'].includes(family);
+  const query=$('#tm-directory-query');
+  if(query){
+    const entries=$$('.tm-directory-group a');
+    query.addEventListener('input',()=>{
+      const words=query.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+      entries.forEach(a=>a.hidden=!words.every(w=>a.textContent.toLocaleLowerCase().includes(w)));
+      $$('.tm-directory-group').forEach(group=>group.hidden=!Array.from(group.querySelectorAll('a')).some(a=>!a.hidden));
+      const count=entries.filter(a=>!a.hidden).length;
+      $('#tm-directory-status').textContent=english?`${count} pages found.${count?'':' Try a shorter word.'}`:`${count} halaman ditemukan.${count?'':' Coba kata yang lebih singkat.'}`;
+    });
+  }
+  const toggle=$('.menu-toggle'),nav=$('.main-nav');
+  if(toggle&&nav){
+    document.addEventListener('keydown',event=>{if(event.key==='Escape'&&nav.classList.contains('is-open')){nav.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');toggle.focus();}});
+    nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');}));
+  }
+  // Announce local control feedback without changing existing IDs or handlers.
+  $$('[data-feedback],[data-form-status],[data-form-message],[data-region-output],#note,#seat-note,#manage-note,#status-note,#result').forEach(el=>{el.setAttribute('role','status');el.setAttribute('aria-live','polite');});
+  if(family==='morrowglass'){
+    let opener=null;
+    const closeModal=modal=>{modal.classList.remove('open');if(opener&&document.contains(opener))opener.focus();};
+    $$('[data-modal-open]').forEach(button=>button.addEventListener('click',()=>{opener=button;const modal=$(button.dataset.modalOpen);if(modal){const title=button.closest('.artifact')?.querySelector('h3')?.textContent;const p=modal.querySelector('p');if(p&&title)p.textContent=`${title} — fictional scene study. Read the adjacent field notes for the context; this is a static concept viewer, not a video stream.`;}}));
+    $$('[data-modal-close]').forEach(button=>button.addEventListener('click',()=>{if(opener)opener.focus();}));
+    $$('.modal').forEach(modal=>modal.addEventListener('click',event=>{if(event.target===modal&&opener)opener.focus();}));
+    document.addEventListener('keydown',event=>{
+      const modal=$('.modal.open');if(!modal)return;
+      if(event.key==='Escape'){event.preventDefault();closeModal(modal);return;}
+      if(event.key==='Tab'){
+        const items=Array.from(modal.querySelectorAll('a[href],button:not([disabled]),input,select,textarea,[tabindex="0"]')).filter(x=>!x.hidden);
+        const first=items[0],last=items[items.length-1];if(!first)return;
+        if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+        else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+      }
+    });
+    $$('[data-tabs]').forEach(group=>{
+      const tabs=Array.from(group.querySelectorAll('.tab'));
+      tabs.forEach((tab,index)=>{tab.tabIndex=tab.getAttribute('aria-selected')==='true'?0:-1;
+        tab.addEventListener('click',()=>tabs.forEach(t=>t.tabIndex=t===tab?0:-1));
+        tab.addEventListener('keydown',event=>{let next=index;if(event.key==='ArrowRight')next=(index+1)%tabs.length;else if(event.key==='ArrowLeft')next=(index+tabs.length-1)%tabs.length;else if(event.key==='Home')next=0;else if(event.key==='End')next=tabs.length-1;else return;event.preventDefault();tabs[next].click();tabs[next].focus();});
+      });
+    });
+  }
+  if(family==='lumenreel'){
+    const key='lumenreel27_watchlist';
+    let values=[],available=true;
+    try{const raw=JSON.parse(localStorage.getItem(key)||'[]');values=Array.isArray(raw)?Array.from(new Set(raw.filter(x=>typeof x==='string'&&x.length<=200))):[];}catch{available=false;}
+    const titleOf=button=>button.closest('[data-film]')?.querySelector('h3')?.textContent?.trim()||$('main h1')?.textContent?.trim()||'Selected title';
+    const buttons=$$('[data-save]');
+    function save(){try{localStorage.setItem(key,JSON.stringify(values));available=true;}catch{available=false;}}
+    function feedback(message){const out=$('#tm-watchlist-status');if(out)out.textContent=message+(available?'':' Browser storage is unavailable; changes last for this page only.');}
+    function render(){
+      buttons.forEach(button=>{const on=values.includes(titleOf(button));button.setAttribute('aria-pressed',String(on));button.textContent=on?'✓ In watchlist':'＋ Watchlist';});
+      const list=$('#tm-watchlist-items');if(!list)return;
+      list.replaceChildren();
+      if(!values.length){const li=document.createElement('li');li.textContent='No saved titles yet. Add a film from Browse or the sample shelf above.';list.append(li);}
+      values.forEach(title=>{const li=document.createElement('li'),span=document.createElement('span'),remove=document.createElement('button');span.textContent=title;remove.type='button';remove.textContent='Remove';remove.setAttribute('aria-label',`Remove ${title}`);remove.addEventListener('click',()=>{values=values.filter(v=>v!==title);save();render();feedback('Title removed.');$('#tm-watchlist-clear')?.focus();});li.append(span,remove);list.append(li);});
+    }
+    buttons.forEach(button=>button.addEventListener('click',()=>{const title=titleOf(button);values=values.includes(title)?values.filter(v=>v!==title):[...values,title];save();render();button.title=available?'Saved on this device':'Browser storage unavailable; temporary selection only';feedback(`${values.length} saved titles.`);}));
+    $('#tm-watchlist-clear')?.addEventListener('click',()=>{values=[];try{localStorage.removeItem(key);}catch{available=false;}render();feedback('Saved titles cleared.');});
+    render();if(!available)feedback('Device list loaded in temporary mode.');
+  }
+  if(family==='meridianair'){
+    const form=$('#flight-search');
+    if(form){
+      const inputs=Array.from(form.querySelectorAll('input')),passengers=form.querySelector('select');
+      let trip='Round trip';
+      form.querySelectorAll('.tabs button').forEach((button,index)=>{button.setAttribute('aria-pressed',String(index===0));button.addEventListener('click',()=>{trip=button.textContent.trim();form.querySelectorAll('.tabs button').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button));});$('#note').textContent=trip==='Multi-city'?'The portfolio dataset contains direct example routes only. Open Route Network to plan the separate legs; no multi-city booking is created.':`${trip} selected. Compare fixed example routes; no booking is submitted.`;});});
+      inputs.forEach(input=>{input.maxLength=120;input.required=true;});
+      form.addEventListener('submit',event=>{
+        event.preventDefault();if(!form.reportValidity())return;
+        const origin=(inputs[0]?.value||'').trim(),destination=(inputs[1]?.value||'').trim(),dates=(inputs[2]?.value||'').trim();
+        const note=$('#note');if(!origin||!destination||!dates){note.textContent='Enter an origin, destination and example dates.';return;}
+        if(!/jakarta|jkt/i.test(origin)||!/singapore|sin|bali|denpasar|dps/i.test(destination)){note.textContent='No route matches this demo dataset. Try Jakarta to Singapore or Jakarta to Bali. No live search was performed.';return;}
+        if(trip==='Multi-city'){note.textContent='Multi-city requires separate legs. This demo compares the two direct routes only; choose Round trip or One way to continue.';return;}
+        const target=new URL('meridianair-flight-results.html',window.location.href);
+        target.searchParams.set('from',origin);target.searchParams.set('to',destination);target.searchParams.set('dates',dates);target.searchParams.set('passengers',passengers?.selectedOptions[0]?.textContent||'1 passenger');target.searchParams.set('trip',trip);
+        note.replaceChildren(document.createTextNode('Example route prepared. '));const a=document.createElement('a');a.href=target.pathname.split('/').pop()+target.search;a.textContent='Compare sample flights →';note.append(a);
+      });
+    }
+    if(window.location.pathname.endsWith('meridianair-flight-results.html')){
+      const params=new URLSearchParams(window.location.search),from=params.get('from'),to=params.get('to');
+      if(from&&to){const section=document.createElement('section');section.className='tm-flight-summary';const heading=document.createElement('h2');heading.textContent='Your comparison context';const p=document.createElement('p');p.textContent=`${from.slice(0,120)} → ${to.slice(0,120)} · ${(params.get('dates')||'Dates not selected').slice(0,120)} · ${(params.get('passengers')||'1 passenger').slice(0,50)} · ${(params.get('trip')||'Journey').slice(0,50)}. The options below remain fixed portfolio examples, not availability or reservations.`;section.append(heading,p);$('main')?.prepend(section);}
+    }
+  }
+})();
+</script>
+</body></html>
